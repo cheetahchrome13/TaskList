@@ -1,0 +1,24 @@
+/*app styles*/
+
+/* Justin Mangan */
+/* 12 December 2017 */
+
+body {
+    font-size: 1em;
+    font-family: Magneto;
+    text-align: center;
+    background-image: url('map.png');
+    background-size: 100%;
+    filter: sepia(100%);
+}
+h1 {
+    font-size: 2.5em;
+}
+ul {
+    font-size: 2em;
+    text-align: left;
+}
+li,
+button:hover {
+    cursor: pointer;
+} 

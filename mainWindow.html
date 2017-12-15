@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <!-- Justin Mangan
+    12 December 2017 -->
+    <title>travelist</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <h1>Travel List</h1>
+    <ul id='tasks'></ul>
+    <button id='add'>Add to file</button>
+    <button id='open'>Open file</button>
+    <script>
+        const electron = require('electron');
+        const {ipcRenderer} = electron;
+        const ul = document.querySelector('ul');
+
+        // add item
+        ipcRenderer.on('item:add', function(e, item){
+           const li = document.createElement('li');
+           li.setAttribute("title", "Dbl-click to delete");
+           const itemText = document.createTextNode(item);
+           li.appendChild(itemText);
+           ul.appendChild(li);
+        });
+
+        // clear item 
+        ipcRenderer.on('item:clear', function(){
+           ul.innerHTML = ''; 
+         });
+
+        // remove item with double clicks
+        ul.addEventListener('dblclick', removeItem);
+         function removeItem(e){
+            e.target.remove();
+         }
+
+    </script>
+    <script>require('./renderer.js')</script>
+</body>
+</html>

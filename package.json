@@ -1,0 +1,14 @@
+{
+  "name": "travelist",
+  "version": "1.0.0",
+  "description": "task list desktop app",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Justin Mangan",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^1.7.9"
+  }
+}
